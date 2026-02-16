@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แนวทางการออกแบบ - Talk with KP</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563EB",
+                        "brand-blue": "#3B82F6",
+                        "blue-light": "#DBEAFE",
+                        "blue-dark": "#1D4ED8",
+                        "white": "#FFFFFF",
+                        "gray-light": "#F8FAFC",
+                        "gray-medium": "#94A3B8",
+                        "gray-dark": "#334155",
+                        "background-light": "#FDFEFE",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Sans Thai", "Manrope", "sans-serif"],
+                        "sans": ["Noto Sans Thai", "Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans Thai', 'Manrope', sans-serif;
+        }
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .typography-sample {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-left: 4px solid #2563EB;
+            background-color: #F8FAFC;
+        }
+    </style>
+</head>
+<body class="bg-gray-light/30 dark:bg-background-dark text-gray-dark dark:text-gray-200">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-primary mb-4">แนวทางการออกแบบ - Talk with KP</h1>
+            <p class="text-lg text-gray-medium">คู่มือการออกแบบสำหรับเว็บไซต์ Talk with KP</p>
+        </header>
+
+        <!-- Color Palette -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-dark dark:text-white mb-8 pb-2 border-b-2 border-gray-medium">Color Palette</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
+                <div class="text-center">
+                    <div class="color-box bg-primary mx-auto mb-2">Primary<br>#2563EB</div>
+                    <p class="font-medium">Primary</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-box bg-brand-blue mx-auto mb-2">Brand Blue<br>#3B82F6</div>
+                    <p class="font-medium">Brand Blue</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-box bg-blue-light mx-auto mb-2" style="color: #000; text-shadow: none;">Blue Light<br>#DBEAFE</div>
+                    <p class="font-medium">Blue Light</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-box bg-blue-dark mx-auto mb-2">Blue Dark<br>#1D4ED8</div>
+                    <p class="font-medium">Blue Dark</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-box bg-white mx-auto mb-2" style="color: #000; text-shadow: none; border: 1px solid #ccc;">White<br>#FFFFFF</div>
+                    <p class="font-medium">White</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-box bg-gray-light mx-auto mb-2" style="color: #000; text-shadow: none;">Gray Light<br>#F8FAFC</div>
+                    <p class="font-medium">Gray Light</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-box bg-gray-medium mx-auto mb-2">Gray Medium<br>#94A3B8</div>
+                    <p class="font-medium">Gray Medium</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-box bg-gray-dark mx-auto mb-2">Gray Dark<br>#334155</div>
+                    <p class="font-medium">Gray Dark</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-box bg-background-light mx-auto mb-2" style="color: #000; text-shadow: none;">Bg Light<br>#FDFEFE</div>
+                    <p class="font-medium">Background Light</p>
+                </div>
+                <div class="text-center">
+                    <div class="color-box bg-background-dark mx-auto mb-2">Bg Dark<br>#0F172A</div>
+                    <p class="font-medium">Background Dark</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-dark dark:text-white mb-8 pb-2 border-b-2 border-gray-medium">Typography</h2>
+            <div class="space-y-4">
+                <div class="typography-sample">
+                    <h1 class="text-5xl font-bold">Heading 1 (text-5xl)</h1>
+                    <p class="text-gray-medium">ใช้สำหรับหัวเรื่องหลัก</p>
+                </div>
+                <div class="typography-sample">
+                    <h2 class="text-4xl font-bold">Heading 2 (text-4xl)</h2>
+                    <p class="text-gray-medium">ใช้สำหรับหัวเรื่องรอง</p>
+                </div>
+                <div class="typography-sample">
+                    <h3 class="text-3xl font-bold">Heading 3 (text-3xl)</h3>
+                    <p class="text-gray-medium">ใช้สำหรับหัวเรื่องย่อย</p>
+                </div>
+                <div class="typography-sample">
+                    <p class="text-lg">Body Large (text-lg) - ใช้สำหรับเนื้อหาหลัก</p>
+                </div>
+                <div class="typography-sample">
+                    <p class="text-base">Body Regular (text-base) - ใช้สำหรับเนื้อหาทั่วไป</p>
+                </div>
+                <div class="typography-sample">
+                    <p class="text-sm">Body Small (text-sm) - ใช้สำหรับคำอธิบายย่อย</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-dark dark:text-white mb-8 pb-2 border-b-2 border-gray-medium">Buttons</h2>
+            <div class="flex flex-wrap gap-6 items-center">
+                <button class="bg-primary hover:bg-blue-dark text-white px-6 py-3 rounded-full font-bold transition-all shadow-md">
+                    Primary Button
+                </button>
+                <button class="bg-brand-blue hover:bg-primary text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg">
+                    Brand Button
+                </button>
+                <button class="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-6 py-3 rounded-full font-bold hover:bg-white/20 transition-all">
+                    Secondary Button
+                </button>
+                <button class="bg-blue-light text-blue-dark px-6 py-3 rounded-full font-bold hover:bg-blue-dark hover:text-white transition-all">
+                    Outline Button
+                </button>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-dark dark:text-white mb-8 pb-2 border-b-2 border-gray-medium">Cards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-blue-800 p-6 rounded-xl border border-gray-medium dark:border-gray-700 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-dark dark:text-white mb-3">Card Standard</h3>
+                    <p class="text-gray-dark/80 dark:text-gray-400">ตัวอย่างการ์ดที่ใช้สำหรับแสดงข้อมูลทั่วไป</p>
+                </div>
+                <div class="bg-gradient-to-br from-red-500 to-orange-400 rounded-3xl p-6 text-white">
+                    <h3 class="text-xl font-bold mb-3">Before Card</h3>
+                    <p>ตัวอย่างการ์ดสีสำหรับเปรียบเทียบ Before/After</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-600 to-blue-500 rounded-3xl p-6 text-white">
+                    <h3 class="text-xl font-bold mb-3">After Card</h3>
+                    <p>ตัวอย่างการ์ดสีสำหรับเปรียบเทียบ Before/After</p>
+                </div>
+                <div class="bg-white dark:bg-blue-800 rounded-[1.5rem] p-6 shadow-sm hover:shadow-md transition-all">
+                    <h3 class="text-xl font-bold text-gray-dark dark:text-white mb-3">Rounded Card</h3>
+                    <p>ตัวอย่างการ์ดที่มีมุมมน</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Badges -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-dark dark:text-white mb-8 pb-2 border-b-2 border-gray-medium">Badges</h2>
+            <div class="flex flex-wrap gap-4 items-center">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-blue-light/20 text-brand-blue border border-blue-light/30 text-xs font-bold uppercase tracking-widest">
+                    Badge Style 1
+                </span>
+                <span class="inline-flex items-center px-4 py-2 bg-blue-light text-blue-dark rounded-full text-sm font-medium">
+                    Badge Style 2
+                </span>
+                <span class="inline-flex items-center px-4 py-2 bg-white/30 text-white rounded-full text-sm font-bold uppercase tracking-widest backdrop-blur-sm">
+                    Badge Style 3
+                </span>
+            </div>
+        </section>
+
+        <!-- Icons -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-dark dark:text-white mb-8 pb-2 border-b-2 border-gray-medium">Icons</h2>
+            <div class="grid grid-cols-3 sm:grid-cols-5 gap-6">
+                <div class="text-center">
+                    <span class="material-symbols-outlined text-4xl text-primary">home</span>
+                    <p class="mt-2">Home</p>
+                </div>
+                <div class="text-center">
+                    <span class="material-symbols-outlined text-4xl text-primary">apartment</span>
+                    <p class="mt-2">Apartment</p>
+                </div>
+                <div class="text-center">
+                    <span class="material-symbols-outlined text-4xl text-primary">check_circle</span>
+                    <p class="mt-2">Check Circle</p>
+                </div>
+                <div class="text-center">
+                    <span class="material-symbols-outlined text-4xl text-primary">location_pin</span>
+                    <p class="mt-2">Location Pin</p>
+                </div>
+                <div class="text-center">
+                    <span class="material-symbols-outlined text-4xl text-primary">design_services</span>
+                    <p class="mt-2">Design Services</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layout Patterns -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-dark dark:text-white mb-8 pb-2 border-b-2 border-gray-medium">Layout Patterns</h2>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hero Section Layout</h3>
+                    <div class="bg-blue-dark text-white rounded-2xl p-8 min-h-[300px] flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-2/3 text-center md:text-left">
+                            <span class="inline-block px-4 py-1.5 mb-4 rounded-full bg-white/30 text-white border border-white/40 text-sm font-bold uppercase tracking-widest backdrop-blur-sm">
+                                สถาปนิกวางระบบอสังหาริมทรัพย์
+                            </span>
+                            <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+                                เปลี่ยนทรัพย์สิน <br/><span class="text-brand-blue">ให้เป็นระบบทำเงิน</span>
+                            </h1>
+                            <p class="text-white/80 text-base md:text-lg mb-6">
+                                กลยุทธ์การใช้อสังหาริมทรัพย์ เพื่อแก้หนี้ เปิดสภาพคล่อง และสร้างทางเลือกใหม่
+                            </p>
+                        </div>
+                        <div class="md:w-1/3 flex justify-center">
+                            <div class="w-40 h-40 bg-gray-200 rounded-full border-4 border-white/30"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Feature Grid Layout</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white dark:bg-blue-800 p-6 rounded-xl border border-gray-medium dark:border-gray-700">
+                            <div class="text-primary mb-4">
+                                <span class="material-symbols-outlined text-3xl">home</span>
+                            </div>
+                            <h4 class="font-bold text-lg text-gray-dark dark:text-white mb-2">Feature Title</h4>
+                            <p class="text-gray-medium">รายละเอียดของฟีเจอร์</p>
+                        </div>
+                        <div class="bg-white dark:bg-blue-800 p-6 rounded-xl border border-gray-medium dark:border-gray-700">
+                            <div class="text-primary mb-4">
+                                <span class="material-symbols-outlined text-3xl">groups</span>
+                            </div>
+                            <h4 class="font-bold text-lg text-gray-dark dark:text-white mb-2">Feature Title</h4>
+                            <p class="text-gray-medium">รายละเอียดของฟีเจอร์</p>
+                        </div>
+                        <div class="bg-white dark:bg-blue-800 p-6 rounded-xl border border-gray-medium dark:border-gray-700">
+                            <div class="text-primary mb-4">
+                                <span class="material-symbols-outlined text-3xl">trending_up</span>
+                            </div>
+                            <h4 class="font-bold text-lg text-gray-dark dark:text-white mb-2">Feature Title</h4>
+                            <p class="text-gray-medium">รายละเอียดของฟีเจอร์</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacing & Grid -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-dark dark:text-white mb-8 pb-2 border-b-2 border-gray-medium">Spacing & Grid</h2>
+            <div class="bg-white dark:bg-blue-800 p-6 rounded-xl border border-gray-medium dark:border-gray-700">
+                <h3 class="text-xl font-bold text-gray-dark dark:text-white mb-4">Grid System</h3>
+                <ul class="space-y-2 text-gray-medium">
+                    <li>• Container: max-w-[1280px] mx-auto px-6</li>
+                    <li>• Main Sections: py-28</li>
+                    <li>• Gap Utilities: gap-4, gap-6, gap-8, gap-12</li>
+                    <li>• Responsive: flex-col on mobile, flex-row on md+</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="mt-16 pt-8 border-t border-gray-medium text-center">
+            <p>แนวทางการออกแบบ - Talk with KP | วันที่สร้าง: 6 กุมภาพันธ์ 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
