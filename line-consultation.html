@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>นัดหมายเพื่อขอคำปรึกษา - Talk with KP</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563EB",
+                        "brand-blue": "#3B82F6",
+                        "blue-light": "#DBEAFE",
+                        "blue-dark": "#1D4ED8",
+                        "white": "#FFFFFF",
+                        "gray-light": "#F8FAFC",
+                        "gray-medium": "#94A3B8",
+                        "gray-dark": "#334155",
+                        "background-light": "#FDFEFE",
+                        "background-dark": "#0F172A",
+                        "line-green": "#06C755",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Sans Thai", "Manrope", "sans-serif"],
+                        "sans": ["Noto Sans Thai", "Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans Thai', 'Manrope', sans-serif;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%);
+            color: white;
+        }
+        .qr-container {
+            background: white;
+            padding: 24px;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        .line-button {
+            background: #06C755;
+            transition: all 0.3s ease;
+        }
+        .line-button:hover {
+            background: #05b34d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(6, 199, 85, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-light/30 dark:bg-background-dark text-gray-dark dark:text-gray-200 min-h-screen flex items-center py-12">
+    <div class="max-w-4xl mx-auto px-6 w-full">
+        <div class="form-container bg-white dark:bg-blue-800 rounded-2xl shadow-xl p-8 md:p-12 border border-gray-medium dark:border-gray-700">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                    <span class="material-symbols-outlined text-4xl text-primary">chat</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-dark dark:text-white mb-4">นัดหมายเพื่อขอคำปรึกษา</h1>
+                <p class="text-lg text-gray-medium">สแกน QR Code หรือคลิกปุ่มด้านล่างเพื่อเพิ่ม LINE อย่างเป็นทางการ</p>
+            </div>
+
+            <div class="hero-section rounded-2xl p-8 mb-8 text-center">
+                <span class="inline-block px-4 py-1.5 mb-4 rounded-full bg-white/30 text-white border border-white/40 text-sm font-bold uppercase tracking-widest backdrop-blur-sm">
+                    สถาปนิกวางระบบอสังหาริมทรัพย์
+                </span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-tight text-white">
+                    เปลี่ยนทรัพย์สิน <span class="text-blue-light">ให้เป็นระบบทำเงิน</span>
+                </h2>
+                <p class="text-white/90 text-base md:text-lg">
+                    ปรึกษาผู้เชี่ยวชาญเกี่ยวกับกลยุทธ์การใช้อสังหาริมทรัพย์ เพื่อแก้หนี้ เปิดสภาพคล่อง และสร้างทางเลือกใหม่
+                </p>
+            </div>
+
+            <div class="qr-container mb-8">
+                <div class="text-center mb-6">
+                    <h3 class="text-xl font-bold text-gray-dark dark:text-white mb-2">เพิ่ม LINE อย่างเป็นทางการ</h3>
+                    <p class="text-gray-medium">สแกน QR Code ด้วยแอป LINE เพื่อเริ่มการปรึกษา</p>
+                </div>
+                <div class="flex justify-center mb-6">
+                    <img 
+                        src="https://qr-official.line.me/gs/M_035gdotz_BW.png?oat_content=qr" 
+                        alt="LINE QR Code" 
+                        class="w-64 h-64 object-contain"
+                    >
+                </div>
+                <div class="text-center">
+                    <a
+                        href="https://lin.ee/tnPOItk"
+                        class="line-button text-white px-8 py-4 rounded-full font-bold text-lg inline-flex items-center gap-3 shadow-md"
+                    >
+                        <span class="material-symbols-outlined">person_add</span>
+                        คลิกเพื่อเพิ่มเพื่อน LINE
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-blue-light/50 dark:bg-blue-700/30 rounded-xl p-6 mb-8">
+                <h4 class="font-bold text-gray-dark dark:text-white mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">info</span>
+                    ขั้นตอนการปรึกษา
+                </h4>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                        <p class="text-gray-dark dark:text-gray-300">สแกน QR Code หรือคลิกปุ่มเพื่อเพิ่ม LINE อย่างเป็นทางการ</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                        <p class="text-gray-dark dark:text-gray-300">ส่งข้อความแนะนำตัวและสถานการณ์ของคุณ</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                        <p class="text-gray-dark dark:text-gray-300">ทีมงานจะติดต่อกลับเพื่อนัดหมายเวลาปรึกษา</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-sm text-gray-medium mb-4">
+                    หรือกลับไปที่ <a href="index.html" class="text-primary hover:underline font-medium">หน้าหลัก</a>
+                </p>
+                <p class="text-xs text-gray-medium">
+                    โดยการติดต่อ คุณยอมรับ <a href="#" class="text-primary hover:underline">นโยบายความเป็นส่วนตัว</a> และ <a href="#" class="text-primary hover:underline">ข้อกำหนดในการให้บริการ</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

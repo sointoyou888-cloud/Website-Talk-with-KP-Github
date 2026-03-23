@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Cash Flow Game | แก้ปัญหาการเงิน กู้บ้านให้ผ่าน</title>
+    <meta name="description" content="Workshop ฟรี เข้าใจระบบการเงิน และรู้วิธีแก้ปัญหาเครดิตบูโร หนี้บัตรเครดิต เพื่อการกู้บ้านที่สำเร็จ">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563EB",
+                        "primary-dark": "#1D4ED8",
+                        "primary-light": "#3B82F6",
+                        "blue-50": "#EFF6FF",
+                        "blue-100": "#DBEAFE",
+                        "blue-200": "#BFDBFE",
+                        "white": "#FFFFFF",
+                        "gray-light": "#F8FAFC",
+                        "gray-medium": "#94A3B8",
+                        "gray-dark": "#334155",
+                        "background-light": "#FAFAFA",
+                        "line-green": "#06C755",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Sans Thai", "Manrope", "sans-serif"],
+                        "sans": ["Noto Sans Thai", "Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    boxShadow: {
+                        "soft": "0 4px 20px rgba(37, 99, 235, 0.08)",
+                        "soft-lg": "0 10px 40px rgba(37, 99, 235, 0.12)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans Thai', 'Manrope', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 50%, #60A5FA 100%);
+        }
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .step-card {
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+        .benefit-card {
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover {
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-dark">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="text-primary">
+                    <svg class="size-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold tracking-wider text-gray-dark">CASH FLOW GAME</h2>
+                    <p class="text-xs text-gray-medium">Financial Workshop</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#problem" class="text-sm font-medium hover:text-primary transition-colors">ปัญหา</a>
+                <a href="#workshop" class="text-sm font-medium hover:text-primary transition-colors">Workshop</a>
+                <a href="#benefits" class="text-sm font-medium hover:text-primary transition-colors">ประโยชน์</a>
+                <a href="#register" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-md">สมัครฟรี</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
+        <div class="relative z-10 max-w-[1280px] mx-auto px-6 py-20 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="max-w-2xl">
+                    <span class="inline-block px-4 py-2 mb-6 rounded-full bg-white/20 text-white border border-white/30 text-sm font-bold uppercase tracking-widest backdrop-blur-sm">
+                        ✨ ปรึกษาการเงินแบบใหม่
+                    </span>
+                    <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        ทำไมคนรายได้ดี <br/>ถึงกู้บ้านไม่ผ่าน?
+                    </h1>
+                    <p class="text-blue-100 text-xl md:text-2xl font-light mb-4">
+                        ปัญหาที่คนส่วนใหญ่ไม่รู้เกี่ยวกับเครดิตบูโร
+                    </p>
+                    <p class="text-white/90 text-base md:text-lg mb-10 leading-relaxed">
+                        คุณอาจมีรายได้ดี แต่ถ้าเครดิตบูโรเสีย หนี้บัตรเครดิตเยอะ หรือเอกสารไม่ครบ ธนาคารก็ยังปฏิเสธการกู้บ้านของคุณได้
+                    </p>
+                    <a href="#register" class="inline-block bg-white text-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-50 transition-all shadow-xl hover:shadow-soft-lg transform hover:-translate-y-1 duration-200">
+                        สมัครเข้าร่วม Workshop ฟรี
+                    </a>
+                </div>
+                <div class="hidden lg:flex justify-center">
+                    <div class="relative">
+                        <div class="w-96 h-96 bg-white/10 rounded-full blur-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                        <div class="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+                            <div class="text-center">
+                                <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="material-symbols-outlined text-5xl text-white">account_balance</span>
+                                </div>
+                                <div class="text-white text-2xl font-bold mb-2">กู้บ้านไม่ผ่าน?</div>
+                                <div class="text-blue-100">เราช่วยคุณได้</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <span class="material-symbols-outlined text-white text-4xl">keyboard_arrow_down</span>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PROBLEM -->
+    <section id="problem" class="py-20 md:py-28 bg-white">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 mb-4 rounded-full bg-blue-50 text-primary border border-blue-100 text-sm font-bold uppercase tracking-widest">
+                    ปัญหาของคุณ
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
+                    ปัญหาที่คุณกำลังเผชิญ
+                </h2>
+                <p class="text-lg text-gray-medium max-w-2xl mx-auto">
+                    ปัจจัยหลักที่ทำให้ธนาคารปฏิเสธการอนุมัติสินเชื่อบ้านของคุณ
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-light p-8 rounded-2xl border border-gray-100 shadow-soft hover:shadow-soft-lg transition-all">
+                    <div class="w-14 h-14 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">warning</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-dark mb-3">เครดิตบูโรเสีย</h3>
+                    <p class="text-gray-medium">ประวัติการชำระหนี้ไม่ดี ทำให้คะแนนเครดิตต่ำ</p>
+                </div>
+                <div class="bg-gray-light p-8 rounded-2xl border border-gray-100 shadow-soft hover:shadow-soft-lg transition-all">
+                    <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">credit_card</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-dark mb-3">หนี้บัตรเครดิต</h3>
+                    <p class="text-gray-medium">หนี้บัตรเครดิตสูง ลดความสามารถในการชำระหนี้ใหม่</p>
+                </div>
+                <div class="bg-gray-light p-8 rounded-2xl border border-gray-100 shadow-soft hover:shadow-soft-lg transition-all">
+                    <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">directions_car</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-dark mb-3">ผ่อนรถ</h3>
+                    <p class="text-gray-medium">ภาระการผ่อนรถสูง ลดอัตราส่วนหนี้สินต่อรายได้</p>
+                </div>
+                <div class="bg-gray-light p-8 rounded-2xl border border-gray-100 shadow-soft hover:shadow-soft-lg transition-all">
+                    <div class="w-14 h-14 bg-gray-200 text-gray-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">description</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-dark mb-3">เอกสารไม่ครบ</h3>
+                    <p class="text-gray-medium">เอกสารสำคัญขาดหายไป ทำให้การอนุมัติล่าช้า</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: WORKSHOP INTRO -->
+    <section id="workshop" class="py-20 md:py-28 bg-blue-50">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 mb-4 rounded-full bg-white text-primary border border-blue-100 text-sm font-bold uppercase tracking-widest shadow-sm">
+                    Workshop
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
+                    Workshop Cash Flow Game
+                </h2>
+                <p class="text-lg text-gray-medium max-w-2xl mx-auto">
+                    เราจัดเตรียม Workshop ที่ช่วยให้คุณเข้าใจระบบการเงิน และรู้วิธีแก้ปัญหาของตัวเอง
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl border border-blue-100 shadow-soft">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">games</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-dark mb-2">เล่นเกม Cash Flow</h3>
+                            <p class="text-gray-medium">ทำความเข้าใจการจัดการเงินผ่านเกมที่สนุก</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-blue-100 shadow-soft">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">fact_check</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-dark mb-2">อธิบายเครดิตบูโร</h3>
+                            <p class="text-gray-medium">เรียนรู้วิธีตรวจสอบและปรับปรุงคะแนนเครดิต</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-blue-100 shadow-soft">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">pie_chart</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-dark mb-2">วิเคราะห์หนี้ของคุณ</h3>
+                            <p class="text-gray-medium">ทำแผนการชำระหนี้ที่เหมาะสมกับสถานการณ์</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-blue-100 shadow-soft">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">trending_up</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-dark mb-2">วางแผนการเงิน</h3>
+                            <p class="text-gray-medium">สร้างแผนการเงินระยะยาวเพื่อความมั่นคง</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: EVENT DETAIL -->
+    <section class="py-20 md:py-28 bg-white">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 mb-4 rounded-full bg-blue-50 text-primary border border-blue-100 text-sm font-bold uppercase tracking-widest">
+                    รายละเอียดงาน
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
+                    Cash Flow Game & Financial Reality Workshop
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-8 rounded-2xl text-white shadow-soft-lg">
+                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">calendar_today</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">📅 วันที่และเวลา</h3>
+                    <p class="text-blue-100">4 เมษายน 2569</p>
+                    <p class="text-blue-100 text-sm">(เวลาแจ้งภายหลัง)</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-8 rounded-2xl text-white shadow-soft-lg">
+                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">location_on</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">📍 สถานที่</h3>
+                    <p class="text-purple-100">Coffee Shop ในเชียงใหม่</p>
+                    <p class="text-purple-100 text-sm">(รายละเอียดจะแจ้งหลังสมัคร)</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-500 to-green-600 p-8 rounded-2xl text-white shadow-soft-lg">
+                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">groups</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">👥 จำนวนผู้เข้าร่วม</h3>
+                    <p class="text-green-100">จำกัดเพียง 20 คน</p>
+                    <p class="text-green-100 text-sm">เพื่อให้ได้รับการให้คำปรึกษาแบบส่วนตัว</p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-500 to-orange-600 p-8 rounded-2xl text-white shadow-soft-lg">
+                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">celebration</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">💰 ค่าเข้าร่วม</h3>
+                    <p class="text-orange-100 text-2xl font-bold">ฟรี</p>
+                    <p class="text-orange-100 text-sm">(รวมอาหารและเครื่องดื่ม)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: BENEFITS -->
+    <section id="benefits" class="py-20 md:py-28 bg-blue-50">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 mb-4 rounded-full bg-white text-primary border border-blue-100 text-sm font-bold uppercase tracking-widest shadow-sm">
+                    ประโยชน์
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
+                    ผู้เข้าร่วม Workshop จะได้รับ
+                </h2>
+                <p class="text-lg text-gray-medium max-w-2xl mx-auto">
+                    ความรู้และทักษะที่จำเป็นในการสมัครกู้บ้านสำเร็จ
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="benefit-card bg-white p-8 rounded-2xl border border-blue-100 shadow-soft">
+                    <div class="w-14 h-14 bg-blue-100 text-primary rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">verified</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-dark mb-3">เข้าใจเครดิตบูโร</h3>
+                    <p class="text-gray-medium">รู้วิธีตรวจสอบคะแนนเครดิตของตัวเอง และวิธีปรับปรุงให้ดีขึ้น</p>
+                </div>
+                <div class="benefit-card bg-white p-8 rounded-2xl border border-blue-100 shadow-soft">
+                    <div class="w-14 h-14 bg-blue-100 text-primary rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">analytics</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-dark mb-3">วิเคราะห์หนี้ตัวเอง</h3>
+                    <p class="text-gray-medium">จัดทำแผนการชำระหนี้ที่เหมาะสม และลดภาระหนี้อย่างมีประสิทธิภาพ</p>
+                </div>
+                <div class="benefit-card bg-white p-8 rounded-2xl border border-blue-100 shadow-soft">
+                    <div class="w-14 h-14 bg-blue-100 text-primary rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">home_work</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-dark mb-3">รู้วิธียื่นกู้บ้าน</h3>
+                    <p class="text-gray-medium">เตรียมเอกสารครบถ้วน และเรียนรู้เทคนิคการสมัครกู้บ้านให้ผ่าน</p>
+                </div>
+                <div class="benefit-card bg-white p-8 rounded-2xl border border-blue-100 shadow-soft">
+                    <div class="w-14 h-14 bg-blue-100 text-primary rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-dark mb-3">วางแผนการเงิน</h3>
+                    <p class="text-gray-medium">สร้างแผนการเงินระยะยาว และเรียนรู้การสร้าง Passive Income</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FORM -->
+    <section id="register" class="py-20 md:py-28 bg-white">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-2 mb-4 rounded-full bg-blue-50 text-primary border border-blue-100 text-sm font-bold uppercase tracking-widest">
+                    ลงทะเบียน
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
+                    สมัครเข้าร่วม Workshop
+                </h2>
+                <p class="text-lg text-gray-medium">
+                    กรอกข้อมูลของคุณ เราจะติดต่อเพื่อยืนยันการสมัครภายใน 24 ชั่วโมง
+                </p>
+            </div>
+            <div class="bg-gray-light p-8 md:p-12 rounded-3xl shadow-soft-lg border border-gray-100">
+                <form action="https://formspree.io/f/mwvnqpkw" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-dark mb-2">ชื่อ-นามสกุล <span class="text-primary">*</span></label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="ชื่อและนามสกุลของคุณ">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-dark mb-2">เบอร์โทรศัพท์ <span class="text-primary">*</span></label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="081-234-5678">
+                    </div>
+                    <div>
+                        <label for="line" class="block text-sm font-medium text-gray-dark mb-2">Line ID <span class="text-gray-medium">(ไม่บังคับ)</span></label>
+                        <input type="text" id="line" name="line" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="@yourline">
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <input type="checkbox" id="privacy" name="privacy" required class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                        <label for="privacy" class="text-sm text-gray-medium">
+                            ข้อมูลของคุณจะถูกเก็บเป็นความลับ และใช้เพื่อติดต่อเกี่ยวกับ Workshop เท่านั้น
+                        </label>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-soft-lg transform hover:-translate-y-0.5 duration-200">
+                        สมัครเข้าร่วม Workshop
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-dark text-white py-12">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <svg class="size-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">CASH FLOW GAME</h3>
+                        <p class="text-sm text-gray-medium">Financial Workshop</p>
+                    </div>
+                </div>
+                <p class="text-gray-medium text-sm">© 2024 Cash Flow Game Workshop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA (Mobile) -->
+    <div class="sticky-cta md:hidden">
+        <a href="#register" class="block w-full bg-primary text-white px-6 py-3 rounded-full font-bold text-center shadow-lg">
+            สมัครเข้าร่วม Workshop ฟรี
+        </a>
+    </div>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Hide sticky CTA when at bottom of page
+        window.addEventListener('scroll', function() {
+            const stickyCta = document.querySelector('.sticky-cta');
+            const footer = document.querySelector('footer');
+            const footerRect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            if (footerRect.top < windowHeight) {
+                stickyCta.style.display = 'none';
+            } else {
+                stickyCta.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
